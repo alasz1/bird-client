@@ -1,0 +1,36 @@
+
+<div class="main">
+<h2>Observations</h2>
+
+<mat-list>
+
+  <mat-divider></mat-divider>
+  <mat-list-item *ngFor="let b of bird" matTooltip="Edit {{b.species}}" (click)=onSelect(b)
+    routerLink="/editsighting/{{b.id}}">
+
+    <span class="birdDetails">{{b.species}}, {{b.rarity}}, {{b.notes}}, {{b.datetime}}, {{b.coordinates}}</span><span class="editHover"><mat-icon matListIcon>edit</mat-icon></span>
+    
+    <mat-icon matListIcon>account_circle</mat-icon>
+
+    <mat-divider></mat-divider>
+    
+  </mat-list-item>
+
+  <!-- <div >
+  <ng-container *ngFor="let p of bird" matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element" matTooltip="Edit {{p.name}}" (click)=onSelect(p)
+    routerLink="/editsighting/{{p.id}}"> {{p.name}} </td>
+  </ng-container>
+
+  <ng-container *ngFor="let p of bird" matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element" matTooltip="Edit {{p.name}}" (click)=onSelect(p)
+    routerLink="/editsighting/{{p.id}}"> {{p.email}} </td>
+  </ng-container>
+</div> -->
+
+</mat-list>
+
+<button mat-stroked-button routerLink="/addsighting" routerLinkActive="link-active">Add Observation</button>
+</div>

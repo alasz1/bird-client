@@ -1,0 +1,35 @@
+
+<div class="newSighting">
+  <h3>Add New Observation</h3>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Species</mat-label>
+    <input matInput #species>
+  </mat-form-field>
+
+  <!-- <mat-form-field>
+    Rarity: <input matInput #rarity>
+  </mat-form-field> -->
+
+  <mat-form-field appearance="outline">
+    <mat-label>Rarity</mat-label>
+    <!-- Rarity: -->
+    <select matNativeControl required #rarity>
+      <option value="common">Common</option>
+      <option value="rare">Rare</option>
+      <option value="extremely rare">Extremely Rare</option>
+    </select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Notes</mat-label>
+    <textarea matInput #notes></textarea>
+  </mat-form-field>
+  <br />
+
+  <!-- Camera input, set to only show on mobile with CSS media qs:
+  <input type="file" accept="image/*" capture="environment"> -->
+
+  <button mat-stroked-button (click)="addSighting(species.value, rarity.value, notes.value);species.value='';rarity.value='';notes.value=''">Add</button>
+  <button mat-stroked-button routerLink="/" routerLinkActive="link-active">Cancel</button>
+</div>
