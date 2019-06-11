@@ -1,14 +1,28 @@
-
-
-
 <div class="updateDetails" *ngIf="sighting">
   <h3>Update / delete sighting details</h3>
-  <mat-form-field>
-    <input matInput type="text" [(ngModel)]="sighting.name" placeholder="Name" />
+
+  <mat-form-field appearance="outline">
+      <mat-label>Species</mat-label>
+    <input matInput type="text" [(ngModel)]="sighting.species" placeholder="Species" />
   </mat-form-field>
-  <mat-form-field>
-    <input matInput type="text" [(ngModel)]="sighting.email" placeholder="Email" />
+
+  <mat-form-field appearance="outline">
+    <mat-label>Rarity</mat-label>
+    <!-- <input matInput type="text" [(ngModel)]="sighting.rarity" placeholder="Rarity" /> -->
+    <select matNativeControl required #rarity [(ngModel)]="sighting.rarity">
+        <option value="common">Common</option>
+        <option value="rare">Rare</option>
+        <option value="extremely rare">Extremely Rare</option>
+      </select>
   </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+          <mat-label>Notes</mat-label>
+          <textarea matInput type="text" [(ngModel)]="sighting.notes" placeholder="Notes"></textarea>
+        </mat-form-field>
+  
+
   <br>
   <button mat-stroked-button (click)="update()">Update Sighting</button>
   <button mat-stroked-button (click)="delete()">Delete Sighting</button>

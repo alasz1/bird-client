@@ -33,13 +33,13 @@ export class AddsightingComponent implements OnInit {
     this.locationService.getPosition().then(pos => 
       {
          console.log(`Lng: ${pos.lng}, Lat: ${pos.lat}`);
-         let coordinates = `Lat: ${pos.lat}, Lng: ${pos.lng}`;
+      let coordinates = `Lat: ${pos.lat}, Lng: ${pos.lng}`;
       
 
     console.log(coordinates)
 
    
-    let nb = new Sighting(null,species,rarity,notes,timestamp,datetime,coordinates);
+    let nb = new Sighting(timestamp,species,rarity,notes,timestamp,datetime,coordinates);
     this.birdService.addSighting(nb).subscribe((newsighting)=>{
     console.dir(newsighting);
     this.router.navigateByUrl("/");
@@ -49,10 +49,11 @@ export class AddsightingComponent implements OnInit {
   // If no geolocation could be fetched
   .catch(error => 
     {
-      coordinates = error.message;
-      console.log(coordinates)
+      
+      console.log(error.message)
+      coordinates = "coordinates unavailable";
 
-      let nb = new Sighting(null,species,rarity,notes,timestamp,datetime,coordinates);
+      let nb = new Sighting(timestamp,species,rarity,notes,timestamp,datetime,coordinates);
       this.birdService.addSighting(nb).subscribe((newsighting)=>{
       console.dir(newsighting);
       this.router.navigateByUrl("/");
