@@ -25,5 +25,5 @@ export class MainComponent implements OnInit {
     this.birdService.getSightings().subscribe(bird => 
       this.bird = bird);
     }
-
+  
 }

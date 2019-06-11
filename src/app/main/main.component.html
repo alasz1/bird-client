@@ -2,10 +2,34 @@
 <div class="main">
 <h2>Observations</h2>
 
-<mat-list>
+  <mat-divider></mat-divider>
+
+  <table style="width:100%">
+
+    <tr>
+      <th>Species</th>
+      <th>Rarity</th>
+      <th>Notes</th>
+      <th>Date & Time</th>
+      <th>Coordinates</th>
+    </tr>
+
+    <tr *ngFor="let b of bird | orderBy: timestamp" matTooltip="Edit {{b.species}}" (click)=onSelect(b)
+    routerLink="/editsighting/{{b.id}}">
+   
+      <td>{{b.species}}</td>
+      <td>{{b.rarity}}</td> 
+      <td>{{b.notes}}</td>
+      <td>{{b.datetime}}</td> 
+      <td>{{b.coordinates}}</td>
+
+    </tr>
+    
+  </table>
 
   <mat-divider></mat-divider>
-  <mat-list-item *ngFor="let b of bird" matTooltip="Edit {{b.species}}" (click)=onSelect(b)
+
+  <!-- <mat-list-item *ngFor="let b of bird" matTooltip="Edit {{b.species}}" (click)=onSelect(b)
     routerLink="/editsighting/{{b.id}}">
 
     <span class="birdDetails">{{b.species}}, {{b.rarity}}, {{b.notes}}, {{b.datetime}}, {{b.coordinates}}</span><span class="editHover"><mat-icon matListIcon>edit</mat-icon></span>
@@ -13,8 +37,8 @@
     <mat-icon matListIcon>account_circle</mat-icon>
 
     <mat-divider></mat-divider>
-    
-  </mat-list-item>
+
+  </mat-list-item> -->
 
   <!-- <div >
   <ng-container *ngFor="let p of bird" matColumnDef="name">
@@ -30,7 +54,7 @@
   </ng-container>
 </div> -->
 
-</mat-list>
+<!-- </mat-list> -->
 
 <button mat-stroked-button routerLink="/addsighting" routerLinkActive="link-active">Add Observation</button>
 </div>

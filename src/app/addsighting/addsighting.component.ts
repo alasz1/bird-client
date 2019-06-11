@@ -33,7 +33,7 @@ export class AddsightingComponent implements OnInit {
     this.locationService.getPosition().then(pos => 
       {
          console.log(`Lng: ${pos.lng}, Lat: ${pos.lat}`);
-         let coordinates = `Lng: ${pos.lng}, Lat: ${pos.lat}`;
+         let coordinates = `Lat: ${pos.lat}, Lng: ${pos.lng}`;
       
 
     console.log(coordinates)
