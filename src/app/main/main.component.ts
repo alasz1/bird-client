@@ -25,9 +25,18 @@ export class MainComponent implements OnInit {
   getAllSightings():void {
     this.birdService.getSightings().subscribe(bird => {
       this.bird = bird; 
-      
+
         // localstorage here!
-        console.log(this.bird)
+        console.log(this.bird[1])
+        
+        this.bird.forEach(birdEntry => {
+          console.log(birdEntry);
+          localStorage.setItem('species', birdEntry.species);
+        });
+
+        let a = localStorage.getItem('species');
+        console.log(a)
+
       });
     }
   
