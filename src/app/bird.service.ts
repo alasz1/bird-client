@@ -32,6 +32,7 @@ export class BirdService {
 
 }
 
-const apiUrl = "http://localhost:3000/api/birds";
+// const apiUrl = "http://localhost:3000/api/birds";
+const apiUrl = "https://bird-app-1.herokuapp.com/api/birds";
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };

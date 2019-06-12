@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crud-rest-app": {
+    "bird-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crud-rest-app",
+            "outputPath": "dist/bird-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "crud-rest-app:build"
+            "browserTarget": "bird-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "crud-rest-app:build:production"
+              "browserTarget": "bird-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "crud-rest-app:build"
+            "browserTarget": "bird-app:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "crud-rest-app-e2e": {
+    "bird-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "crud-rest-app:serve"
+            "devServerTarget": "bird-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "crud-rest-app:serve:production"
+              "devServerTarget": "bird-app:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "crud-rest-app"
+  "defaultProject": "bird-app"
 }
