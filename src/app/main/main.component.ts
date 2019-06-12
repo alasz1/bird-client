@@ -18,12 +18,17 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAllSightings()
+    this.getAllSightings();
+    
   }
 
   getAllSightings():void {
-    this.birdService.getSightings().subscribe(bird => 
-      this.bird = bird);
+    this.birdService.getSightings().subscribe(bird => {
+      this.bird = bird; 
+      
+        // localstorage here!
+        console.log(this.bird)
+      });
     }
   
 }

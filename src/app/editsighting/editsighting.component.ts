@@ -24,6 +24,7 @@ export class EditsightingComponent implements OnInit {
       let id:number=params['id'];
       this.birdService.getSighting(id).subscribe((sighting:Sighting)=>{
       this.sighting=sighting;
+      console.log(this.sighting)
       })
     })
   }

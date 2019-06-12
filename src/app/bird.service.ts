@@ -10,7 +10,7 @@ import { Sighting } from './bird';
 export class BirdService {
 
   getSightings(): Observable<Sighting[]> {
-    return this.http.get<Sighting[]>(apiUrl);
+    return this.http.get<Sighting[]>(apiUrl);;
   }
 
   addSighting(bird: Sighting): Observable<Sighting> {
