@@ -4,13 +4,14 @@ import { MainComponent } from  './main/main.component'
 import { AddsightingComponent } from './addsighting/addsighting.component'
 import { EditsightingComponent} from './editsighting/editsighting.component'
 
-const routes: Routes = [{
-  path: '',
-  redirectTo: '/main',
-  pathMatch: 'full' 
-},
+const routes: Routes = [
+//   {
+//   path: '',
+//   redirectTo: '/main',
+//   pathMatch: 'full' 
+// },
 {
-  path: 'main',
+  path: '',
   component: MainComponent
 },
 {
