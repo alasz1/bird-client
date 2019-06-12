@@ -7,13 +7,8 @@
     <input matInput #species>
   </mat-form-field>
 
-  <!-- <mat-form-field>
-    Rarity: <input matInput #rarity>
-  </mat-form-field> -->
-
   <mat-form-field appearance="outline">
     <mat-label>Rarity</mat-label>
-    <!-- Rarity: -->
     <select matNativeControl required #rarity>
       <option value="common">Common</option>
       <option value="rare">Rare</option>
@@ -27,7 +22,7 @@
   </mat-form-field>
   <br />
 
-  <!-- Camera input, set to only show on mobile with CSS media qs:
+  <!-- Camera input / add image:
   <input type="file" accept="image/*" capture="environment"> -->
 
   <button mat-stroked-button (click)="addSighting(species.value, rarity.value, notes.value);species.value='';rarity.value='';notes.value=''">Add</button>

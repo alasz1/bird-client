@@ -1,60 +1,39 @@
-
 <div class="main">
-<h2>Observations</h2>
+
+  <h2>Observations</h2>
+
+  <mat-divider></mat-divider>
+  <i class="fas fa-crow"></i>
+  <button mat-stroked-button routerLink="/addsighting" routerLinkActive="link-active">Add Observation</button>
 
   <mat-divider></mat-divider>
 
-  <table style="width:100%">
+  <div class="tablewrapper">
+    <table>
 
-    <tr>
-      <th>Species</th>
-      <th>Rarity</th>
-      <th>Notes</th>
-      <th>Date & Time</th>
-      <th>Coordinates</th>
-    </tr>
+      <tr>
+        <th>Species</th>
+        <th>Rarity</th>
+        <th>Notes</th>
+        <th>Date & Time</th>
+        <th>Coordinates</th>
+      </tr>
 
-    <tr *ngFor="let b of bird | orderBy: timestamp" matTooltip="Edit {{b.species}}" (click)=onSelect(b)
-    routerLink="/editsighting/{{b.id}}">
-   
-      <td>{{b.species}}</td>
-      <td>{{b.rarity}}</td> 
-      <td id="notes">{{b.notes}}</td>
-      <td>{{b.datetime}}</td> 
-      <td>{{b.coordinates}}</td>
+      <tr *ngFor="let b of bird | orderBy: timestamp" matTooltip="Edit {{b.species}}" (click)=onSelect(b)
+        routerLink="/editsighting/{{b.id}}" class="observations">
 
-    </tr>
-    
-  </table>
+        <td>{{b.species}}</td>
+        <td>{{b.rarity}}</td>
+        <td id="notes">{{b.notes}}</td>
+        <td>{{b.datetime}}</td>
+        <td>{{b.coordinates}}</td>
+
+      </tr>
+
+    </table>
+
+  </div>
 
   <mat-divider></mat-divider>
 
-  <!-- <mat-list-item *ngFor="let b of bird" matTooltip="Edit {{b.species}}" (click)=onSelect(b)
-    routerLink="/editsighting/{{b.id}}">
-
-    <span class="birdDetails">{{b.species}}, {{b.rarity}}, {{b.notes}}, {{b.datetime}}, {{b.coordinates}}</span><span class="editHover"><mat-icon matListIcon>edit</mat-icon></span>
-    
-    <mat-icon matListIcon>account_circle</mat-icon>
-
-    <mat-divider></mat-divider>
-
-  </mat-list-item> -->
-
-  <!-- <div >
-  <ng-container *ngFor="let p of bird" matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element" matTooltip="Edit {{p.name}}" (click)=onSelect(p)
-    routerLink="/editsighting/{{p.id}}"> {{p.name}} </td>
-  </ng-container>
-
-  <ng-container *ngFor="let p of bird" matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let element" matTooltip="Edit {{p.name}}" (click)=onSelect(p)
-    routerLink="/editsighting/{{p.id}}"> {{p.email}} </td>
-  </ng-container>
-</div> -->
-
-<!-- </mat-list> -->
-
-<button mat-stroked-button routerLink="/addsighting" routerLinkActive="link-active">Add Observation</button>
 </div>

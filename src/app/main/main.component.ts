@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BirdService } from '../bird.service'
 import { Sighting } from '../bird'
 import { AppRoutingModule } from '../app-routing.module';
-import {TooltipPosition} from '@angular/material';
+import { TooltipPosition } from '@angular/material';
 import { FormControl } from '@angular/forms';
 
 
@@ -19,29 +19,39 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.getAllSightings();
-    
+
   }
 
-  getAllSightings():void {
-    this.birdService.getSightings().subscribe(bird => {
-      this.bird = bird; 
+  getAllSightings(): void {
 
-        // localstorage here!
-        console.log(this.bird[1])
+    // read data from localstorage
+    let birdData = JSON.parse(localStorage.getItem("birdData"));
+    console.log("birdData retrieved from localstorage: ", birdData)
 
-        // this.bird.forEach(birdEntry => {
-        //   console.log(birdEntry);
-        //   localStorage.setItem(JSON.stringify(birdEntry.id), birdEntry.species);
-        // });
-
-
-          localStorage.setItem("birdData", JSON.stringify(this.bird));
-        
-
-        let a = JSON.parse(localStorage.getItem("birdData"));
-        console.log("birdData: ", a)
-
-      });
+    if (birdData) {
+    this.bird = birdData;
     }
-  
+
+    // read data from server
+    this.birdService.getSightings().subscribe(bird => {
+      this.bird = bird;
+      console.log("birdData retrieved from server: ", bird)
+      
+      // localstorage here!
+      // console.log(this.bird[1])
+
+      // this.bird.forEach(birdEntry => {
+      //   console.log(birdEntry);
+      //   localStorage.setItem(JSON.stringify(birdEntry.id), birdEntry.species);
+      // });
+
+      // send data to localstorage
+      localStorage.setItem("birdData", JSON.stringify(this.bird));
+
+      // read data from localstorage
+      // let birdData = JSON.parse(localStorage.getItem("birdData"));
+      // console.log("birdData: ", birdData)
+    });
+  }
+
 }
