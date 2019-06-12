@@ -28,14 +28,18 @@ export class MainComponent implements OnInit {
 
         // localstorage here!
         console.log(this.bird[1])
-        
-        this.bird.forEach(birdEntry => {
-          console.log(birdEntry);
-          localStorage.setItem('species', birdEntry.species);
-        });
 
-        let a = localStorage.getItem('species');
-        console.log(a)
+        // this.bird.forEach(birdEntry => {
+        //   console.log(birdEntry);
+        //   localStorage.setItem(JSON.stringify(birdEntry.id), birdEntry.species);
+        // });
+
+
+          localStorage.setItem("birdData", JSON.stringify(this.bird));
+        
+
+        let a = JSON.parse(localStorage.getItem("birdData"));
+        console.log("birdData: ", a)
 
       });
     }
