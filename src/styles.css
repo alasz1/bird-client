@@ -4,3 +4,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+app-root {
+    margin: 5px;
+}

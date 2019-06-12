@@ -14,10 +14,11 @@ div.tablewrapper {
 table {
     width: 100%;
 }
+
 td, th {
-    font-size: .8em;
+    font-size: .6em;
     text-align: left;
-    padding: 8px;
+    padding: 4px;
 }
 
 td:hover {
@@ -28,9 +29,17 @@ td#notes {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100px;
+    max-width: 50px;
 }
 
 tr.observations {
     background-color: #f5f5f5;
 }
+
+@media screen and (min-width: 600px) {
+    td, th {
+        font-size: .8em;
+        text-align: left;
+        padding: 8px;
+    }
+  }

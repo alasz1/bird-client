@@ -30,12 +30,8 @@ export class BirdService {
 
   constructor(private http: HttpClient) { }
 
-
 }
 
-
-// const httpOptions={headers:new HttpHeaders({'Content-Type':'application/json'})};
-
-const apiUrl = "http://localhost:3000/api/people";
+const apiUrl = "http://localhost:3000/api/birds";
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };

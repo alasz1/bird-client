@@ -27,6 +27,8 @@ export class AddsightingComponent implements OnInit {
     // add 0 if minutes are only one digit long
     if (minutes.toString().length < 2) {
       minutesStr = "0" + minutes.toString();
+    } else {
+      minutesStr = minutes.toString();
     }
 
     // concatenate date & time
