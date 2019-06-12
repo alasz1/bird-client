@@ -3,30 +3,9 @@
     text-align: center;
 }
 
-/* mat-list {
-    width: 60vw;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-mat-list-item:hover {
-    cursor: pointer;
-} */
-
 button {
     margin:1em;
 }
-
-/* .editHover {
-    opacity: 0;
-    transition: visibility 0s, opacity 0.2s ease-in-out;
-}
-
-span.birdDetails:hover + span.editHover {
-    opacity: 1;
-} */
-
-
 
 div.tablewrapper {
     margin: 5px;
